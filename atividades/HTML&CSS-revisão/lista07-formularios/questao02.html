@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QUESTÃO 02</title>
+    <link rel="stylesheet" href="questoes.css/questao02.css">
+
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">SISTEMA DE GESTÃO ACADÊMICA</div>
+        <h3>MANUTENÇÃO DE USUÁRIOS DO SISTEMA INTERNO</h3>
+
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="login">Login:</label>
+                <input type="text" id="login" name="login">
+            </div>
+
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha">
+            </div>
+
+            <div class="form-group">
+                <label for="status">Status:</label>
+                <select id="status" name="status">
+                    <option>Inativo</option>
+                    <option>Ativo</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Tipo:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="tipo" value="tecnico"> Técnico</label>
+                    <label><input type="radio" name="tipo" value="professor"> Professor</label>
+                    <label><input type="radio" name="tipo" value="aluno"> Aluno</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="data">Data Criação:</label>
+                <input type="date" id="data" name="data">
+            </div>
+
+            <div class="form-group">
+                <label>Perfil:</label>
+                <div class="radio-group">
+                    <label><input type="radio" name="perfil" value="convidado"> Convidado</label>
+                    <label><input type="radio" name="perfil" value="administrador"> Administrador</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="observacoes">Observações:</label>
+            </div>
+            <textarea id="observacoes" name="observacoes"></textarea>
+
+            <div class="form-group">
+                <label>Módulos:</label>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" name="modulos" value="compras"> Compras</label>
+                    <label><input type="checkbox" name="modulos" value="biblioteca"> Biblioteca</label>
+                    <label><input type="checkbox" name="modulos" value="academico"> Acadêmico</label>
+                    <label><input type="checkbox" name="modulos" value="documentacao"> Documentação</label>
+                    <label><input type="checkbox" name="modulos" value="recursos_humanos"> Recursos Humanos</label>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button type="submit">Cadastrar</button>
+                <button type="reset">Excluir</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>QUESTÃO 03</title>
+        <link rel="stylesheet" href="questoes.css/questao03.css">
+    </head>
+    <body>
+        <div class="container">
+            <div class="formulario">
+                <fieldset class="formulario-box">
+                    <legend class="titulo">Cadastro Geral</legend>
+                    <div class="linha">
+                        <fieldset class="secao">
+                            <legend class="subtitulo">Dados Pessoais</legend>
+                            <label for="nome">Nome Completo</label><br>
+                            <input type="text" id="nome" class="input-campo"><br>
+                            <label for="profissao">Profissão</label><br>
+                            <select id="profissao" class="input-campo">
+                                <option value="">Selecione sua profissão</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="secao">
+                            <legend class="subtitulo">Localização</legend>
+                            <label for="email">E-mail</label><br>
+                            <input type="email" id="email" class="input-campo"><br>
+                            <label for="rua">Rua</label><br>
+                            <input type="text" id="rua" class="input-campo">
+                        </fieldset>
+                    </div>
+                    <fieldset class="secao">
+                        <legend class="subtitulo">Faixa Etária</legend>
+                        <div class="linha">
+                            <div class="coluna">
+                                <input type="radio" name="idade" id="ate20"> <label for="ate20">Até 20 anos</label><br>
+                                <input type="radio" name="idade" id="20a30"> <label for="20a30">Mais de 20 até 30 anos</label><br>
+                                <input type="radio" name="idade" id="30a40"> <label for="30a40">Mais de 30 até 40 anos</label>
+                            </div>
+                            <div class="coluna">
+                                <input type="radio" name="idade" id="40a50"> <label for="40a50">Mais de 40 até 50 anos</label><br>
+                                <input type="radio" name="idade" id="50a60"> <label for="50a60">Mais de 50 até 60 anos</label><br>
+                                <input type="radio" name="idade" id="mais60"> <label for="mais60">Mais de 60 anos</label>
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset class="secao">
+                        <legend class="subtitulo">Esporte que Pratica</legend>
+                        <div class="coluna-esporte">
+                            <input type="checkbox" id="futcampo"> <label for="futcampo">Futebol de campo</label><br>
+                            <input type="checkbox" id="futsalao"> <label for="futsalao">Futebol de salão</label><br>
+                            <input type="checkbox" id="futsociety"> <label for="futsociety">Futebol society</label><br>
+                            <input type="checkbox" id="volleyquadra"> <label for="volleyquadra">Vôlei de quadra</label><br>
+                            <input type="checkbox" id="volleypraia"> <label for="volleypraia">Vôlei de praia</label><br>
+                            <input type="checkbox" id="natacao"> <label for="natacao">Natação em piscina</label><br>
+                            <input type="checkbox" id="natacaoaberta"> <label for="natacaoaberta">Natação em mar aberto</label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="secao">
+                        <legend class="subtitulo">Comentário</legend>
+                        <label for="mensagem">Mensagem:</label><br>
+                        <textarea id="mensagem" class="input-texto"></textarea>
+                    </fieldset>
+                    <div class="botoes">
+                        <input type="submit" value="Enviar" class="botao">
+                        <input type="reset" value="Limpar" class="botao">
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </body>
+</html>

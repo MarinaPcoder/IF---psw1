@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    width: 400px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    height: 100px;
+}
+
+button {
+    background-color: #ccc;
+    padding: 5px 10px;
+    border: 1px solid #838282;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #bbb;
+}
