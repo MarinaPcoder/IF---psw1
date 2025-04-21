@@ -34,14 +34,14 @@
       font-size: 22px;
     }
 
-    input[type="text"] {
+    input[type="number"] {
       padding: 8px;
       width: 100%;
       font-size: 16px;
       border: 1px solid #2B5288;
       border-radius: 6px;
-      margin-bottom: 10px;
       text-align: center;
+      margin-bottom: 10px;
     }
 
     input[type="submit"] {
@@ -69,7 +69,7 @@
       color: #2B5288;
     }
 
-    .nome {
+    .numero {
       display: inline-block;
       margin: 5px;
       padding: 8px 12px;
@@ -80,30 +80,27 @@
     }
   </style>
 </head>
+
 <body>
 
 <div class="principal">
 
-
   <div class="formulario">
-    <h1>Digitar 5 nomes</h1>
     <form method="post">
-      <input type="text" name="nome" placeholder="Digite um nome" required>
-
+      <input type="number" name="numero" required>
       <?php
-        $nomes = isset($_POST["nomes"]) ? $_POST["nomes"] : [];
-        $novo = isset($_POST["nome"]) ? trim($_POST["nome"]) : null;
+        $vetor = isset($_POST["vetor"]) ? $_POST["vetor"] : [];
+        $novo = isset($_POST["numero"]) ? intval($_POST["numero"]) : null;
 
-        if ($novo !== null && $novo !== "" && count($nomes) < 5) {
-          $nomes[] = ($novo);
+        if ($novo !== null && count($vetor) < 5) {
+          $vetor[] = $novo;
         }
 
-        foreach ($nomes as $n) {
-          echo "<input type='hidden' name='nomes[]' value=\"$n\">";
+        foreach ($vetor as $v) {
+          echo "<input type='hidden' name='vetor[]' value='$v'>";
         }
       ?>
-
-      <input type="submit" name="registrar" value="Adicionar Nome">
+      <input type="submit" name="registrar" value="adicionar número">
     </form>
 
     <form method="post">
@@ -111,11 +108,11 @@
     </form>
   </div>
 
-  <?php if (count($nomes) === 5): ?>
+  <?php if (count($vetor) === 5): ?>
     <div class="resultado">
-      <h2>Nomes Digitados:</h2>
-      <?php foreach ($nomes as $nome): ?>
-        <span class="nome"><?= $nome ?></span>
+      <h2>Números Digitados:</h2>
+      <?php foreach ($vetor as $num): ?>
+        <span class="numero"><?= $num ?></span>
       <?php endforeach; ?>
     </div>
   <?php endif; ?>
@@ -128,6 +125,6 @@ if (isset($_POST["resetar"])) {
   exit();
 }
 ?>
- 
+  
 </body>
 </html>

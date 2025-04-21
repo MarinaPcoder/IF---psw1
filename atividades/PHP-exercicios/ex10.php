@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,27 +11,33 @@
       font-family: Arial, sans-serif;
       background-color: #E0F2FF;
       color: #003B73;
+      margin: 0;
       padding: 40px;
     }
 
     .principal {
       display: flex;
-      gap: 40px;
       align-items: flex-start;
+      gap: 40px;
     }
 
     .formulario {
       background-color: #A8D0F0;
-      border: 2px solid #2B5288;
       padding: 20px;
       border-radius: 10px;
-      width: 280px;
+      border: 2px solid #2B5288;
+      width: 300px;
     }
 
-    .formulario h1 {
-      margin-top: 0;
+    h1 {
       color: #2B5288;
-      font-size: 22px;
+      font-size: 24px;
+      margin-top: 0;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
     }
 
     input[type="number"] {
@@ -53,7 +59,6 @@
       font-weight: bold;
       cursor: pointer;
       width: 100%;
-      margin-bottom: 10px;
     }
 
     .resultado {
@@ -61,70 +66,81 @@
       border: 2px solid #2B5288;
       padding: 20px;
       border-radius: 10px;
-      min-width: 280px;
+      min-width: 300px;
     }
 
     .resultado h2 {
-      margin-top: 0;
       color: #2B5288;
+      margin-top: 0;
     }
 
-    .numero {
-      display: inline-block;
-      margin: 5px;
-      padding: 8px 12px;
-      background-color: #E0F2FF;
-      border: 1px solid #2B5288;
-      border-radius: 5px;
-      font-weight: bold;
+    .reset {
+      margin-top: 20px;
+      background-color: #003B73;
     }
   </style>
 </head>
-
 <body>
 
-<div class="principal">
+    <div class="principal">
 
-  <div class="formulario">
-    <form method="post">
-      <input type="number" name="numero" required>
-      <?php
-        $vetor = isset($_POST["vetor"]) ? $_POST["vetor"] : [];
-        $novo = isset($_POST["numero"]) ? intval($_POST["numero"]) : null;
+        <div class="formulario">
+            <form method="post">
+            <label for="idade">Digite uma idade (menor que 1 para parar):</label>
+            <input type="number" name="idade" id="idade" required min="0">
 
-        if ($novo !== null && count($vetor) < 5) {
-          $vetor[] = $novo;
-        }
+            <?php
+                $idades = isset($_POST["idades"]) ? $_POST["idades"] : [];
+                $nova_idade = isset($_POST["idade"]) ? intval($_POST["idade"]) : null;
 
-        foreach ($vetor as $v) {
-          echo "<input type='hidden' name='vetor[]' value='$v'>";
-        }
-      ?>
-      <input type="submit" name="registrar" value="adicionar número">
-    </form>
+                
+                if ($nova_idade !== null && $nova_idade >= 1) {
+                    $idades[] = $nova_idade;
+                }
 
-    <form method="post">
-      <input type="submit" name="resetar" value="Resetar">
-    </form>
-  </div>
 
-  <?php if (count($vetor) === 5): ?>
-    <div class="resultado">
-      <h2>Números Digitados:</h2>
-      <?php foreach ($vetor as $num): ?>
-        <span class="numero"><?= $num ?></span>
-      <?php endforeach; ?>
+                foreach ($idades as $valor) {
+                    echo "<input type='hidden' name='idades[]' value='$valor'>";
+                }
+            ?>
+
+            <input type="submit" name="registrar" value="Registrar"><br><br>
+            </form>
+
+            <form method="post">
+            <input type="submit" name="resetar" value="Resetar" class="reset">
+            </form>
+        </div>
+
+        <?php
+            $mostrar_resultado = ($nova_idade !== null && $nova_idade < 1);
+
+            if ($mostrar_resultado && count($idades) > 0):
+            $menores = 0;
+            $idosos = 0;
+
+            foreach ($idades as $idade) {
+                if ($idade < 18) $menores++;
+                if ($idade > 65) $idosos++;
+            }
+        ?>
+
+        <div class="resultado">
+                <h2>Resultados:</h2>
+                <p><strong>Menores de 18:</strong> <?= $menores ?></p>
+                <p><strong>Maiores de 65:</strong> <?= $idosos ?></p>
+        </div>
+        
+        <?php endif; ?>
+
     </div>
-  <?php endif; ?>
 
-</div>
+    <?php
+        if (isset($_POST["resetar"])) {
+        header("Location: " . $_SERVER["PHP_SELF"]);
+        exit();
+        }
+    ?>
 
-<?php
-if (isset($_POST["resetar"])) {
-  header("Location: " . $_SERVER["PHP_SELF"]);
-  exit();
-}
-?>
-  
 </body>
 </html>
