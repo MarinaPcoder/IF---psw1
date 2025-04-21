@@ -8,9 +8,9 @@
 <body>
 <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial;
       background-color: #E0F2FF;
-      color: #003B73;
+      color:rgb(0, 0, 0);
       margin: 0;
       padding: 40px;
     }
@@ -26,15 +26,8 @@
       padding: 20px;
       border-radius: 10px;
       border: 2px solid #2B5288;
-      width: 300px;
+      width: 400px;
     }
-
-    h1 {
-      color: #2B5288;
-      font-size: 24px;
-      margin-top: 0;
-    }
-
     label {
       display: block;
       margin-bottom: 10px;
@@ -42,7 +35,7 @@
 
     input[type="number"] {
       padding: 8px;
-      width: 100%;
+      width: 96%;
       font-size: 16px;
       border: 1px solid #2B5288;
       border-radius: 6px;
@@ -70,7 +63,7 @@
     }
 
     .resultado h2 {
-      color: #2B5288;
+      color:rgb(0, 0, 0);
       margin-top: 0;
     }
 

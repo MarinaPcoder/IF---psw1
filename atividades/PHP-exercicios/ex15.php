@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,22 +8,17 @@
 <body>
 <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial;
       background-color: #E0F2FF;
       color: #003B73;
       padding: 40px;
       text-align: center;
     }
 
-    h1 {
-      color: #2B5288;
-      margin-bottom: 30px;
-    }
-
     .retangulo {
       width: 300px;
       height: 150px;
-      border: 3px solid #2B5288;
+      border: 3px solid rgb(0, 0, 0);
       margin: 0 auto;
       position: relative;
       background-color: #A8D0F0;
@@ -31,7 +26,7 @@
 
     .rotulo-altura, .rotulo-largura {
       position: absolute;
-      color: #2B5288;
+      color:rgb(0, 0, 0);
       font-weight: bold;
     }
 
@@ -49,12 +44,13 @@
 
     form {
       margin-top: 40px;
+      color:rgb(0, 0, 0);
     }
 
     input[type="number"] {
       padding: 8px;
       width: 150px;
-      border: 1px solid #2B5288;
+      border: 1px solid rgb(0, 0, 0);
       border-radius: 6px;
       text-align: center;
       margin: 10px;
@@ -65,7 +61,7 @@
       background-color: #2B5288;
       color: white;
       border: none;
-      border-radius: 6px;
+      border-radius: 2px;
       font-weight: bold;
       cursor: pointer;
     }
@@ -73,11 +69,12 @@
     .resultado {
       margin-top: 30px;
       font-size: 20px;
+      color:rgb(0, 0, 0);
       background-color: #A8D0F0;
-      border: 2px solid #2B5288;
+      border: 2px solid rgb(0, 0, 0);
       display: inline-block;
       padding: 15px 30px;
-      border-radius: 10px;
+      border-radius: 5px;
     }
   </style>
 </head>

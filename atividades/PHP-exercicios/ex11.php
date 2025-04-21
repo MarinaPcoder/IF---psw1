@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,9 +8,9 @@
 <body>
 <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial;
       background-color: #E0F2FF;
-      color: #003B73;
+      color:rgb(0, 0, 0);
       padding: 40px;
     }
 
@@ -28,15 +28,15 @@
       width: 280px;
     }
 
-    .formulario h1 {
+    .formulario h2 {
       margin-top: 0;
-      color: #2B5288;
+      color:rgb(0, 0, 0);
       font-size: 22px;
     }
 
     input[type="number"] {
       padding: 8px;
-      width: 100%;
+      width: 94%;
       font-size: 16px;
       border: 1px solid #2B5288;
       border-radius: 6px;
@@ -66,7 +66,7 @@
 
     .resultado h2 {
       margin-top: 0;
-      color: #2B5288;
+      color:rgb(0, 0, 0);
     }
 
     .numero {
@@ -86,6 +86,7 @@
 <div class="principal">
 
   <div class="formulario">
+  <h2>Digite 5 Números:</h2>
     <form method="post">
       <input type="number" name="numero" required>
       <?php
