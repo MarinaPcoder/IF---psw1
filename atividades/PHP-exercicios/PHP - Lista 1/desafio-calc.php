@@ -169,5 +169,58 @@
   ?>
 </div>
 
+<div class="calculadora">
+  <form method="post">
+    <div class="visor">
+      <input type="number" name="n1" placeholder="0" value="<?= $_POST['n1'] ?? '' ?>" required>
+      <input type="text" name="operacao" placeholder="?" value="<?= $_POST['operacao'] ?? '' ?>" readonly>
+      <input type="number" name="n2" placeholder="0" value="<?= $_POST['n2'] ?? '' ?>" required>
+    </div>
+
+    <div class="teclado">
+      <div class="botoes-operacoes">
+        <button type="submit" name="operacao" value="+" class="soma">+</button>
+        <button type="submit" name="operacao" value="-" class="sub">-</button>
+        <button type="submit" name="operacao" value="*" class="mult">×</button>
+        <button type="submit" name="operacao" value="/" class="divisao">÷</button>
+        <button type="submit" name="operacao" value="%" class="resto">%</button>
+      </div>
+
+      <div class="botoes-comandos">
+        <button type="submit" name="calcular" class="igual">=</button>
+        <button type="submit" name="limpar" class="limpar">C</button>
+      </div>
+    </div>
+  </form>
+
+  <?php
+if (isset($_POST["calcular"])) {
+  switch ($op) {
+    case '+':
+      $resultado = $n1 + $n2;
+      break;
+    case '-':
+      $resultado = $n1 - $n2;
+      break;
+    case '*':
+      $resultado = $n1 * $n2;
+      break;
+    case '/':
+      $resultado = $n2 != 0 ? $n1 / $n2 : "Erro: divisão por zero";
+      break;
+    case '%':
+      $resultado = $n2 != 0 ? $n1 % $n2 : "Erro: divisão por zero";
+      break;
+    default:
+      $resultado = "Operação inválida";
+  }
+
+  echo "<div class='resultado'>Resultado: <strong>$resultado</strong></div>";
+}
+  ?>
+</div>
+
 </body>
 </html>
+
+
