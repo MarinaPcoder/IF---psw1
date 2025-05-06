@@ -8,8 +8,8 @@
 <body>
 <style>
     :root {
-      --maroon: #800000;
-      --cream: #f9f4ef;
+      --marsala: #800000;
+      --creme: #f9f4ef;
     }
 
     * {
@@ -19,14 +19,14 @@
     }
 
     body {
-      background-color: var(--cream);
+      background-color: var(--creme);
       font-family: 'Segoe UI', sans-serif;
       padding: 30px;
       color: #111;
     }
 
     header {
-      background-color: var(--maroon);
+      background-color: var(--marsala);
       color: white;
       text-align: center;
       padding: 20px;
@@ -43,7 +43,7 @@
 
     .box {
       background-color: white;
-      border: 2px solid var(--maroon);
+      border: 2px solid var(--marsala);
       border-radius: 10px;
       padding: 20px;
       width: 500px;
@@ -51,7 +51,7 @@
     }
 
     h2 {
-      color: var(--maroon);
+      color: var(--marsala);
       margin-bottom: 10px;
     }
 
@@ -65,7 +65,7 @@
     }
 
     button {
-      background-color: var(--maroon);
+      background-color: var(--marsala);
       color: white;
       cursor: pointer;
       margin-top: 15px;
